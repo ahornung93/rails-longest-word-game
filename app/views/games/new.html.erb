@@ -1,2 +1,20 @@
-<h1>Games#new</h1>
-<p>Find me in app/views/games/new.html.erb</p>
+<h1>New Game</h1>
+<div class="grid">
+  <div class="card" style=""><p><%= @letters[0] %></p></div>
+  <div class="card" style=""><p><%= @letters[1] %></p></div>
+  <div class="card" style=""><p><%= @letters[2] %></p></div>
+  <div class="card" style=""><p><%= @letters[3] %></p></div>
+  <div class="card" style=""><p><%= @letters[4] %></p></div>
+  <div class="card" style=""><p><%= @letters[5] %></p></div>
+  <div class="card" style=""><p><%= @letters[6] %></p></div>
+  <div class="card" style=""><p><%= @letters[7] %></p></div>
+  <div class="card" style=""><p><%= @letters[8] %></p></div>
+  <div class="card" style=""><p><%= @letters[9] %></p></div>
+</div>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+  <input name="word" id="answer" type="text">
+  <input id="btn" type="submit">
+</form>
